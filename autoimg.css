@@ -1,0 +1,98 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+    background-color: rgb(214, 214, 114);
+    overflow: hidden;
+    position: relative; /*we use position:absolute for dots,slider-container is outer container we apply dots for that */
+}
+
+.heading{
+    text-align: center;
+    margin: 10px;
+    color: rgb(92, 84, 84);
+    text-shadow: 1px 1px 1px black;
+}
+
+#slider{
+    width: 700px;
+    height:500px;
+    overflow: hidden;
+    margin: 30px;
+    border: 10px;
+    box-shadow: 0px 0px 10px 1px black;
+    position: relative;/*we use position:absolute for prev-next,slider is inner container we apply prev-next for that because it has images  */
+}
+
+#slider img{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#slider .active{ /*show image whose class is active*/
+    display: block;
+}
+
+#prev,#next{
+    position: absolute;/*for slider*/
+    top: 50%;/*for slider at side, by top 50% middle*/
+    color: rgb(230, 214, 214);
+    border-radius: 50%;
+    display: flex;/*icon in middle of border-radius*/
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    /* background-color: rgb(red, green,blue,alpha); */
+    background-color: rgba(228, 207, 207, 0.404);
+    transition: all 0.5s;
+}
+#prev{
+    left: 3px;
+}
+#next{
+    right: 3px;
+}
+.fa-solid{
+    font-size: larger;
+}
+#prev:hover,#next:hover{
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0);
+    color:black;
+    box-shadow: 2px 2px 2px 1px  black;
+    cursor: pointer;
+}
+
+.dots-container{
+    position: absolute;/*for slider-container*/
+    bottom: 80px;
+    left:45% ;
+}
+
+.dot {
+    cursor:pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s;
+  }
+  .dot:hover {
+    background-color: #b75d5d;
+  }
+  .dots-container .activeDot{
+    background-color: rgb(212, 102, 80);
+  }
